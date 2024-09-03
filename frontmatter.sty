@@ -1,0 +1,145 @@
+\ProvidesPackage{frontmatter}
+
+\usepackage[onehalfspacing]{setspace}
+%\usepackage[utf8]{inputenc}	%Not needed when using XeLaTeX
+%\usepackage[T1]{fontenc}
+\usepackage{helvet}
+\usepackage{fontspec}
+\setmainfont{Free Helvetian}
+\setlength\parindent{0cm}
+\setlength\parskip{1em}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{graphicx}
+\usepackage{wrapfig}
+\usepackage{tabularx}
+\usepackage[toc,page]{appendix}
+\usepackage{pdfpages}
+\renewcommand{\appendixtocname}{Anhang}
+\renewcommand{\appendixpagename}{Anhang}
+\usepackage[square, numbers]{natbib}	%citation
+\usepackage[nottoc]{tocbibind}
+\usepackage{acronym}	%Abbreviations
+\usepackage[pagebackref=true]{hyperref}	%clickable links
+\usepackage{color}
+\usepackage{listings}	%code listings
+\renewcommand{\lstlistlistingname}{Codeblockverzeichnis}
+\renewcommand{\lstlistingname}{Codeblock}
+%%%%%%%%%%%%%%%%%%%%%%%%%%
+\definecolor{lightgray}{rgb}{0.95, 0.95, 0.95}
+\definecolor{darkgray}{rgb}{0.4, 0.4, 0.4}
+%\definecolor{purple}{rgb}{0.65, 0.12, 0.82}
+\definecolor{editorGray}{rgb}{0.95, 0.95, 0.95}
+\definecolor{editorOcher}{rgb}{1, 0.5, 0} % #FF7F00 -> rgb(239, 169, 0)
+\definecolor{editorGreen}{rgb}{0, 0.5, 0} % #007C00 -> rgb(0, 124, 0)
+\definecolor{orange}{rgb}{1,0.45,0.13}		
+\definecolor{olive}{rgb}{0.17,0.59,0.20}
+\definecolor{brown}{rgb}{0.69,0.31,0.31}
+\definecolor{purple}{rgb}{0.38,0.18,0.81}
+\definecolor{lightblue}{rgb}{0.1,0.57,0.7}
+\definecolor{lightred}{rgb}{1,0.4,0.5}
+\lstdefinelanguage{CSS}{
+	keywords={color,background-image:,margin,padding,font,weight,display,position,top,left,right,bottom,list,style,border,size,white,space,min,width, transition:, transform:, transition-property, transition-duration, transition-timing-function},	
+	sensitive=true,
+	morecomment=[l]{//},
+	morecomment=[s]{/*}{*/},
+	morestring=[b]',
+	morestring=[b]",
+	alsoletter={:},
+	alsodigit={-}
+}
+
+% JavaScript
+\lstdefinelanguage{JavaScript}{
+	morekeywords={typeof, new, true, false, catch, function, return, null, catch, switch, var, if, in, while, do, else, case, break, let, of},
+	morecomment=[s]{/*}{*/},
+	morecomment=[l]//,
+	morestring=[b]",
+	morestring=[b]'
+}
+
+\lstdefinelanguage{HTML5}{
+	language=html,
+	sensitive=true,	
+	alsoletter={<>=-},	
+	morecomment=[s]{<!-}{-->},
+	tag=[s],
+	otherkeywords={>, <!DOCTYPE, <!doctype, </html, <html, <head, <title, </title, <style, </style, <link, </head, <meta, />, <li, </li, <ul, </ul, <h1, </h1, <h2, </h2, <img, <table, </table, <tr, </tr, <th, </th, <tr, </tr, <td, </td, <button, </button, <input, </input, <label, </label, </body, <body, </div, <div, </div>, </p, <p, </p>, </script, <script, <canvas, /canvas>, <svg, <rect, <animateTransform, </rect>, </svg>, <video, <source, <iframe, </iframe>, </video>, <image, </image>, <header, </header, <article, </article, <span, </span, <code, </code},
+	ndkeywords={
+		% General
+		=,
+		% HTML attributes
+		charset=, src=, id=, width=, height=, style=, type=, rel=, href=,
+		% SVG attributes
+		fill=, attributeName=, begin=, dur=, from=, to=, poster=, controls=, x=, y=, repeatCount=, xlink:href=,
+		% properties
+		margin:, padding:, background-image:, border:, top:, left:, position:, width:, height:, margin-top:, margin-bottom:, font-size:, line-height:,
+		% CSS3 properties
+		transform:, -moz-transform:, -webkit-transform:,
+		animation:, -webkit-animation:,
+		transition:,  transition-duration:, transition-property:, transition-timing-function:,
+	},
+	deletekeywords={HTML, html}
+}
+
+\lstdefinestyle{htmlcssjs} {%
+	% General design
+	%  backgroundcolor=\color{editorGray},
+	basicstyle={\footnotesize\ttfamily},   
+	frame=b,
+	% line-numbers
+	xleftmargin={0.75cm},
+	numbers=left,
+	stepnumber=1,
+	firstnumber=1,
+	numberfirstline=true,	
+	% Code design
+	identifierstyle=\color{black},
+	keywordstyle=\color{blue}\bfseries,
+	ndkeywordstyle=\color{editorGreen}\bfseries,
+	stringstyle=\color{editorOcher}\ttfamily,
+	commentstyle=\color{brown}\ttfamily,
+	% Code
+	language=HTML5,
+	alsolanguage=JavaScript,
+	alsodigit={.:;},	
+	tabsize=2,
+	showtabs=false,
+	showspaces=false,
+	showstringspaces=false,
+	extendedchars=true,
+	breaklines=true,
+	% German umlauts
+	literate=%
+	{Ö}{{\"O}}1
+	{Ä}{{\"A}}1
+	{Ü}{{\"U}}1
+	{ß}{{\ss}}1
+	{ü}{{\"u}}1
+	{ä}{{\"a}}1
+	{ö}{{\"o}}1
+}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+\hypersetup{	%link formatting
+	colorlinks=true,
+	linkcolor=blue,
+	filecolor=magenta,      
+	urlcolor=cyan,
+	citecolor=green,
+	linktoc=page,
+	pdftitle={\@title},
+}
+\def\sectionautorefname{Abschnitt}
+\def\subsectionautorefname{Abschnitt}
+\def\subsubsectionautorefname{Abschnitt}
+\def\tableautorefname{Tabelle}
+\def\figureautorefname{Abbildung}
+\def\appendixautorefname{Anhang}
+
+\usepackage{enumitem}
+\setlist[itemize]{noitemsep, topsep=0pt}
+\usepackage[left=3cm, right=3cm, top=3cm, bottom=3cm]{geometry}
+\usepackage[ngerman]{babel}
