@@ -1,0 +1,105 @@
+\ProvidesPackage{thesis-ufr}
+
+\usepackage[left=3cm, right=3cm, top=3cm, bottom=3cm]{geometry}
+\usepackage[onehalfspacing]{setspace}	% Line spacing
+%\usepackage[utf8]{inputenc}	% Not needed when using XeLaTeX
+%\usepackage[T1]{fontenc}
+\usepackage{helvet}
+\usepackage{fontspec}
+\setmainfont{Free Helvetian}
+\setlength\parindent{0cm}
+\setlength\parskip{1em}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{graphicx}
+\usepackage{wrapfig}
+\usepackage{tabularx}
+\usepackage[toc,page]{appendix}
+\usepackage{titling}
+\usepackage{pdfpages}
+\renewcommand{\appendixtocname}{Anhang}
+\renewcommand{\appendixpagename}{Anhang}
+\usepackage{natbib}	%citation
+\setcitestyle{authoryear}
+\usepackage[nottoc]{tocbibind}
+\usepackage{acronym}	%Abbreviations
+\usepackage{xcolor}
+% Uni Freiburg corporate design colors, see https://cd.uni-freiburg.de/farben/
+\definecolor{ufrblue}{RGB}{52, 74, 154}
+\definecolor{ufrdarkblue}{RGB}{0, 1, 73}
+\usepackage[pagebackref=true, plainpages=false]{hyperref}	%clickable links
+% plainpages: See the workaround https://tex.stackexchange.com/a/94196
+
+
+% Heading styles
+\usepackage[sf,bf,raggedright]{titlesec}
+\titlespacing*{\chapter}{0pt}{11pt}{22pt}
+\titlespacing*{\section}{0pt}{33pt}{22pt}
+\titlespacing*{\subsection}{0pt}{33pt}{22pt}
+\titleformat{\chapter}[hang]{\Huge\bfseries}{\thechapter.}{15pt}{\Huge\bfseries\color{ufrblue}}
+\titleformat{\section}[hang]{\Large\bfseries}{\thesection}{15pt}{\Large\bfseries\color{ufrblue}}
+\titleformat{\subsection}{\large\bfseries}{\thesubsection}{15pt}{\large\bfseries\color{ufrblue}}
+\titleformat{\subsubsection}[hang]{\normalsize\bfseries}{\thesubsubsection}{15pt}{\normalsize\bfseries\color{ufrblue}}
+
+% Header and Footer
+\usepackage{fancyhdr}
+
+\fancypagestyle{fancybody}{
+	\fancyhf{}
+	\fancyhead[L]{\nouppercase{\leftmark}}
+	\fancyfoot[C]{\thepage}
+	\renewcommand{\headrule}{\color{ufrblue}\hrule}
+}
+
+\fancypagestyle{plain}{
+	\fancyhf{}
+	\fancyfoot[C]{\thepage}
+	\renewcommand{\headrule}{}
+}
+\renewcommand{\chaptermark}[1]{\markboth{\normalfont\thechapter.\space\color{ufrblue}#1}{}}
+
+
+
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Some colors used for code listings
+%%%%%%%%%%%%%%%%%%%%%%%%%%
+\definecolor{lightgray}{rgb}{0.95, 0.95, 0.95}
+\definecolor{darkgray}{rgb}{0.4, 0.4, 0.4}
+%\definecolor{purple}{rgb}{0.65, 0.12, 0.82}
+\definecolor{editorGray}{rgb}{0.95, 0.95, 0.95}
+\definecolor{editorOcher}{rgb}{1, 0.5, 0} % #FF7F00 -> rgb(239, 169, 0)
+\definecolor{editorGreen}{rgb}{0, 0.5, 0} % #007C00 -> rgb(0, 124, 0)
+\definecolor{orange}{rgb}{1,0.45,0.13}		
+\definecolor{olive}{rgb}{0.17,0.59,0.20}
+\definecolor{brown}{rgb}{0.69,0.31,0.31}
+\definecolor{purple}{rgb}{0.38,0.18,0.81}
+\definecolor{lightblue}{rgb}{0.1,0.57,0.7}
+\definecolor{lightred}{rgb}{1,0.4,0.5}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+\hypersetup{	%link formatting
+	colorlinks=true,
+	%linkcolor=blue,
+	%filecolor=magenta,      
+	%urlcolor=cyan,
+	%citecolor=green,
+	allcolors=ufrblue,
+	linktoc=page,
+	pdftitle={\@title},
+}
+\def\sectionautorefname{Abschnitt}
+\def\subsectionautorefname{Abschnitt}
+\def\subsubsectionautorefname{Abschnitt}
+\def\tableautorefname{Tabelle}
+\def\figureautorefname{Abbildung}
+\def\appendixautorefname{Anhang}
+
+\usepackage{enumitem}
+\setlist[itemize]{noitemsep, topsep=0pt}
+\usepackage[ngerman]{babel}

@@ -1,0 +1,43 @@
+\documentclass[11pt, a4paper, oneside]{report}
+\usepackage{thesis-ufr}
+\usepackage{lipsum}
+\usepackage{background}
+\author{Lorenz Bung}
+\title{Analyse der Auswirkungen persönlicher Beziehungen zu eigenen Schülerinnen und Schülern auf die Bias-Awareness von Lehrkräften}
+
+\begin{document}
+% Workaround for hyperref backlinks in bibliography, see https://tex.stackexchange.com/a/94196
+\pagenumbering{gobble}
+	
+% Title page
+\input{titlepage}
+
+\input{abstract}
+
+\pagestyle{empty}
+
+\tableofcontents
+\newpage
+% End workaround
+\pagenumbering{arabic}
+
+\pagestyle{fancybody}
+\input{einleitung}
+\newpage
+\input{forschung}
+\newpage
+\input{datenerhebung}
+\newpage
+\input{auswertung}
+\newpage
+\input{diskussion}
+\newpage
+\input{fazit}
+
+
+% Bibliography
+\newpage
+\pagenumbering{Roman}
+\bibliographystyle{plainnat-german}
+\bibliography{thesis}
+\end{document}
