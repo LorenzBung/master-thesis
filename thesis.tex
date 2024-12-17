@@ -3,22 +3,22 @@
 \usepackage{lipsum}
 \usepackage{background}
 \author{Lorenz Bung}
-\title{Analyse der Auswirkungen persönlicher Beziehungen zu eigenen Schülerinnen und Schülern auf die Bias-Awareness von Lehrkräften}
+\title{Auswirkungen schulbezogener Itemformulierungen auf die gemessene Bias-Awareness von Lehrkräften}
+\newcommand{\datestart}{01.12.2024}
+\newcommand{\dateend}{18.12.2024}
 
 \begin{document}
-% Workaround for hyperref backlinks in bibliography, see https://tex.stackexchange.com/a/94196
-\pagenumbering{gobble}
-	
 % Title page
 \input{titlepage}
 
 \input{abstract}
 
-\pagestyle{empty}
-
+\pagestyle{plain}
+\pagenumbering{Roman}
 \tableofcontents
+\listoffigures
+\listoftables
 \newpage
-% End workaround
 \pagenumbering{arabic}
 
 \pagestyle{fancybody}
@@ -40,4 +40,8 @@
 \pagenumbering{Roman}
 \bibliographystyle{plainnat-german}
 \bibliography{thesis}
+
+\newpage
+\appendix
+\input{appendix}
 \end{document}
