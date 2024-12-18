@@ -1,6 +1,5 @@
 setwd("/home/lorenz/Documents/master-thesis/data")
-data <- data.frame(read.csv("data_awareness2024_2024-12-08_13-47.csv",
-                     header=TRUE, sep=";", dec=",", fileEncoding="UTF-16LE"))
+data <- data.frame(read.csv("data_awareness2024_2024-12-08_13-47.csv", header=TRUE, sep=";", dec=",", fileEncoding="UTF-16LE"))
 
 ## DATA PREPARATION
 ## CLEANUP

@@ -9,9 +9,8 @@
 
 \begin{document}
 % Title page
+\pagenumbering{alph}
 \input{titlepage}
-
-\input{abstract}
 
 \pagestyle{plain}
 \pagenumbering{Roman}
@@ -19,6 +18,8 @@
 \listoffigures
 \listoftables
 \newpage
+\newcounter{pagestorage}
+\setcounter{pagestorage}{\value{page}}
 \pagenumbering{arabic}
 
 \pagestyle{fancybody}
@@ -38,6 +39,7 @@
 % Bibliography
 \newpage
 \pagenumbering{Roman}
+\setcounter{page}{\value{pagestorage}}
 \bibliographystyle{plainnat-german}
 \bibliography{thesis}
 

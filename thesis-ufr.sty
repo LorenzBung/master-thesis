@@ -35,6 +35,10 @@
 % Uni Freiburg corporate design colors, see https://cd.uni-freiburg.de/farben/
 \definecolor{ufrblue}{RGB}{52, 74, 154}
 \definecolor{ufrdarkblue}{RGB}{0, 1, 73}
+\definecolor{ufrgreen}{RGB}{0, 160, 130}
+\definecolor{ufryellow}{RGB}{255, 232, 99}
+\definecolor{ufrbrown}{RGB}{143, 107, 48}
+\definecolor{ufrpink}{RGB}{245, 194, 237}
 \usepackage[pagebackref=true, plainpages=false]{hyperref}	%clickable links
 % plainpages: See the workaround https://tex.stackexchange.com/a/94196
 
@@ -130,6 +134,7 @@
 	showstringspaces=false,         % underline spaces within strings
 	showtabs=false,                 % show tabs within strings adding particular underscores
 	frame=single,                   % adds a frame around the code
+	xleftmargin=15pt,
 	rulecolor=\color{black},        % if not set, the frame-color may be changed on line-breaks within not-black text (e.g. commens (green here))
 	tabsize=2,                      % sets default tabsize to 2 spaces
 	captionpos=b,                   % sets the caption-position to bottom
@@ -137,9 +142,9 @@
 	breakatwhitespace=false,        % sets if automatic breaks should only happen at whitespace
 	%title=\lstname,                 % show the filename of files included with \lstinputlisting;
 	% also try caption instead of title
-	keywordstyle=\color{purple},      % keyword style
+	keywordstyle=\color{ufrblue},      % keyword style
 	commentstyle=\color{gray},   % comment style
-	stringstyle=\color{orange},      % string literal style
+	stringstyle=\color{ufrgreen},      % string literal style
 	escapeinside={\%*}{*)},         % if you want to add a comment within your code
 	morekeywords={TRUE, FALSE, NULL, NA}            % if you want to add more keywords to the set
 } 
